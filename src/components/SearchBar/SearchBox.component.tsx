@@ -1,30 +1,24 @@
-import TextField from '@mui/material/TextField';
-import {Autocomplete, InputAdornment, IconButton} from '@mui/material';
-import SearchIcon from '@material-ui/icons/Search';
+import {Input, AutoComplete} from 'antd';
+import {UserOutlined} from '@ant-design/icons';
 
 import './SearchBox.scss';
 
 export const SearchBox = () => {
   return (
-    <div>
-      <SearchIcon className="search-icon" />
-      <Autocomplete
-        freeSolo
-        disablePortal
-        id="combo-box-demo"
-        options={[{label: '1'}]}
-        sx={{width: 300}}
-        className="search-box-container"
-        renderInput={params => (
-          <TextField
-            {...params}
-            label="Movie"
-            InputLabelProps={{
-              shrink: false,
-            }}
-          />
-        )}
+    <AutoComplete
+      className="auto-complete"
+      options={[
+        {
+          label: 'aasas',
+        },
+      ]}
+    >
+      <Input.Search
+        size="large"
+        placeholder="input here"
+        enterButton
+        className="search-input"
       />
-    </div>
+    </AutoComplete>
   );
 };
