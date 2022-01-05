@@ -1,0 +1,19 @@
+.MuiAutocomplete-inputRoot[class*='MuiOutlinedInput-root'] {
+  background: #ffff;
+}
+
+.search-box-container {
+  padding-left: 32px;
+  background: #ffff;
+}
+
+.search-box-container > div {
+  > label.Mui-focused {
+    display: none;
+  }
+}
+
+.search-icon {
+  width: 20px;
+  height: 20px;
+}

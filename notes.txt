@@ -1,0 +1,1 @@
+1.) bolierplate had redux, but not being used, not being removed
