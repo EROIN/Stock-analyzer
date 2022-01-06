@@ -4,8 +4,11 @@ import './Home.scss';
 
 import {SearchBox, SearchResults} from '../../components';
 import {getStockDetailsFromSymbol} from '../../middleware/search.middleware';
-import {SEARCH_RESULTS} from '../../__mocks__/searchResult.mocks';
-import {SearchResultsStore} from '../../types/search/symbolSearch.types';
+// import {SEARCH_RESULTS} from '../../__mocks__/searchResult.mocks';
+import {
+  SearchResultsStore,
+  StockDetailAPIResponse,
+} from '../../types/search/symbolSearch.types';
 
 export function Home() {
   const [searchResults, setSearchresults] = useState<SearchResultsStore>({
@@ -14,13 +17,17 @@ export function Home() {
   });
 
   const getStockDetails = async (symbol: string) => {
-    const stockDetails = await getStockDetailsFromSymbol(symbol);
+    let stockDetails = await getStockDetailsFromSymbol(symbol);
     setSearchresults(prevSearchResults => {
-      const newKey =
-        Object.keys(stockDetails).length > 0 ? symbol : '<Invalid Key>';
+      let newKey =
+        Object.keys(stockDetails).length > 0 && stockDetails.Note == undefined
+          ? symbol
+          : 'nodata';
+      newKey = newKey.toLowerCase();
+      // this is beacuse API is rate limited
+      if (stockDetails.Note) stockDetails = {} as StockDetailAPIResponse;
       return {
-        ...prevSearchResults,
-        activeKey: symbol,
+        activeKey: newKey,
         results: {
           ...prevSearchResults.results,
           [newKey]: stockDetails,
@@ -40,7 +47,7 @@ export function Home() {
         <SearchBox getStockDetails={getStockDetails} />
       </section>
       <section className="search-results-container">
-        <SearchResults data={SEARCH_RESULTS} refreshData={refreshData} />
+        <SearchResults data={searchResults} refreshData={refreshData} />
       </section>
     </div>
   );

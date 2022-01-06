@@ -9,7 +9,7 @@ import './SearchResults.scss';
 import {SearchResultsProps} from './SearchResults.types';
 import {SearchedTab} from '../../components/SearchedTab/SearchedTab.component';
 import {Refresher} from '../../components/Refresher/Refresher.component';
-import {StockDetailAPIResponse} from '../../types/search/symbolSearch.types';
+// import {StockDetailAPIResponse} from '../../types/search/symbolSearch.types';
 
 export const SearchResults = (props: SearchResultsProps) => {
   const {
@@ -17,42 +17,44 @@ export const SearchResults = (props: SearchResultsProps) => {
     refreshData,
   } = props;
 
-  const [activeKeyIndex, setActiveKeyIndex] = useState<string>('');
+  const [activeKey, setactiveKey] = useState<string>('');
 
   useEffect(() => {
-    setActiveKeyIndex(nextKey);
+    console.log(nextKey);
+    setactiveKey(nextKey);
   }, [nextKey]);
 
   const reFetchData = () => {
-    refreshData(results[activeKeyIndex]['Symbol']);
+    refreshData(results[activeKey]['Symbol']);
   };
 
   const changeActiveKey = (increment: number) => () => {
     const allKeys = Object.keys(results);
-    let currentKey = allKeys.findIndex((key: string) => key === activeKeyIndex);
+    let currentKey = allKeys.findIndex((key: string) => key === activeKey);
     currentKey = currentKey + increment;
-    console.log(currentKey);
-
     if (currentKey < 0) currentKey = allKeys.length - 1;
     else if (currentKey >= allKeys.length) currentKey = 0;
-    console.log(currentKey, allKeys[currentKey], results[allKeys[currentKey]]);
-    setActiveKeyIndex(allKeys[currentKey]);
+    setactiveKey(allKeys[currentKey]);
   };
 
-  const onChange = (activeKey: string) => {
-    console.log(activeKey);
-
-    setActiveKeyIndex(activeKey);
+  const onChange = (newActiveKey: string) => {
+    setactiveKey(newActiveKey);
   };
 
   const addTabs = (stockKey: string) => (
     <TabPane
-      key={results[stockKey]['Symbol'] || '<Invalid Key>'}
-      tab={results[stockKey]['Name'] || '<Invalid Key>'}
+      key={
+        results[stockKey]['Symbol']
+          ? results[stockKey]['Symbol'].toLowerCase()
+          : 'nodata'
+      }
+      tab={results[stockKey]['Name'] || 'NoData'}
     >
       <SearchedTab data={results[stockKey]} />
     </TabPane>
   );
+
+  console.log(activeKey);
 
   if (Object.keys(results).length == 0)
     return <div className="search-result-empty">Search Something!!</div>;
@@ -67,15 +69,14 @@ export const SearchResults = (props: SearchResultsProps) => {
     );
   return (
     <div className="search-results-tabs-container">
-      {results[activeKeyIndex] &&
-        Object.keys(results[activeKeyIndex]).length > 0 && (
-          <Refresher refreshData={reFetchData} />
-        )}
+      {results[activeKey] && Object.keys(results[activeKey]).length > 0 && (
+        <Refresher refreshData={reFetchData} />
+      )}
       <StepBackwardOutlined
         className="search-result-previous-icon"
         onClick={changeActiveKey(-1)}
       />
-      <Tabs type="editable-card" activeKey={activeKeyIndex} onChange={onChange}>
+      <Tabs type="editable-card" activeKey={activeKey} onChange={onChange}>
         {Object.keys(results).map(addTabs)}
       </Tabs>
       <StepForwardOutlined

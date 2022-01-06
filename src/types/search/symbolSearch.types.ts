@@ -15,6 +15,7 @@ export interface SymbolSearchAPIResponse {
 }
 
 export interface StockDetailAPIResponse {
+  Note?: string; // API is rate limited and it fails
   Symbol: string;
   AssetType: string;
   Name: string;

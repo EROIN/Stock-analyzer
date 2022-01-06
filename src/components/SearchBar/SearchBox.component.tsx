@@ -43,12 +43,17 @@ export const SearchBox = ({getStockDetails}: SearchBoxProps) => {
     [],
   );
 
-  const searchStock = () => {
-    getStockDetails(inputValue);
+  const searchStock = (input: string) => () => {
+    getStockDetails(input);
     setIsListVisible(false);
   };
 
+  const onSelectStock = (value: any) => {
+    searchStock(value)();
+  };
+
   const openList = () => setIsListVisible(true);
+  const closeList = () => setIsListVisible(false);
 
   return (
     <AutoComplete
@@ -57,16 +62,17 @@ export const SearchBox = ({getStockDetails}: SearchBoxProps) => {
       value={inputValue}
       onChange={setInputValue}
       onSearch={throttleGetStockDetails}
-      onSelect={searchStock}
+      onSelect={onSelectStock}
       open={isListVisible}
       onFocus={openList}
+      onBlur={closeList}
     >
       <Input.Search
         enterButton
         size="large"
         placeholder="Enter Stock Code"
         className="search-input"
-        onSearch={searchStock}
+        onSearch={searchStock(inputValue)}
         suffix={
           <LoadingOutlined
             className={loading ? 'show-loading' : 'hide-loading'}

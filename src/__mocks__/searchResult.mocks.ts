@@ -101,6 +101,6 @@ export const SEARCH_RESULTS = {
       DividendDate: '2021-12-10',
       ExDividendDate: '2021-11-09',
     } as StockDetailAPIResponse,
-    '<Invalid Key>': {} as StockDetailAPIResponse,
+    NoData: {} as StockDetailAPIResponse,
   },
 };

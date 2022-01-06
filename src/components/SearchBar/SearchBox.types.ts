@@ -1,3 +1,3 @@
 export interface SearchBoxProps {
-  getStockDetails: (value: string) => void;
+  getStockDetails: (value: any) => void;
 }
