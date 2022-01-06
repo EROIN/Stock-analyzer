@@ -20,3 +20,17 @@
     font-weight: 300;
   }
 }
+
+.search-tab-container {
+  display: flex;
+}
+
+.search-tab-details-wrapper {
+  flex: 1;
+}
+
+.search-tab-chart-container {
+  width: 400px;
+  height: 200px;
+  align-self: center;
+}

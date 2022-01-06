@@ -3,7 +3,7 @@ import {StockDetailAPIResponse} from '../types/search/symbolSearch.types';
 export const SEARCH_RESULTS = {
   activeKey: 'INTC',
   results: {
-    INTC: {
+    intc: {
       Symbol: 'INTC',
       AssetType: 'Common Stock',
       Name: 'Intel Corporation',
@@ -52,7 +52,7 @@ export const SEARCH_RESULTS = {
       DividendDate: '2021-12-01',
       ExDividendDate: '2021-11-04',
     } as StockDetailAPIResponse,
-    IBM: {
+    ibm: {
       Symbol: 'IBM',
       AssetType: 'Common Stock',
       Name: 'International Business Machines Corporation',
@@ -101,6 +101,6 @@ export const SEARCH_RESULTS = {
       DividendDate: '2021-12-10',
       ExDividendDate: '2021-11-09',
     } as StockDetailAPIResponse,
-    NoData: {} as StockDetailAPIResponse,
+    nodata: {} as StockDetailAPIResponse,
   },
 };

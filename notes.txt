@@ -5,3 +5,4 @@
 5.) API is rate limited
 6.) More test cases
 7.) Dockerised
+8.) Husky

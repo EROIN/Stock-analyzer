@@ -1,3 +1,5 @@
+import {GetTimeSeriesAPIResponse} from '../types/timeSeries/timeSeries.types';
+
 export const TIME_SERIES_DATA = {
   'Meta Data': {
     '1. Information': 'Daily Prices (open, high, low, close) and Volumes',
@@ -708,4 +710,4 @@ export const TIME_SERIES_DATA = {
       '5. volume': '3074078',
     },
   },
-};
+} as any as GetTimeSeriesAPIResponse;
