@@ -9,7 +9,7 @@ import {getSearchSymbols} from '../../middleware/search.middleware';
 
 import {SearchBoxProps} from './SearchBox.types';
 import {SymbolSearch} from '../../types/search/symbolSearch.types';
-import {throttleFunc} from '../../utils/common.utils';
+import {debounceFunc} from '../../utils/common.utils';
 
 // import {SYMBOLS} from '../../__mocks__/symbolSearch.mocks';
 
@@ -28,7 +28,7 @@ export const SearchBox = ({getStockDetails}: SearchBoxProps) => {
   });
 
   const throttleGetStockDetails = useMemo(
-    (): (() => any) => throttleFunc(onSearch, 1000),
+    (): ((input: string) => void) => debounceFunc(onSearch, 400),
     [],
   );
 

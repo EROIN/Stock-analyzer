@@ -5,6 +5,7 @@ import './Home.scss';
 
 import {SearchBox, SearchResults} from '../../components';
 import {getStockDetailsFromSymbol} from '../../middleware/search.middleware';
+import {SEARCH_RESULTS} from '../../__mocks__/searchResult.mocks';
 import {StockDetailAPIResponse} from '../../types/search/symbolSearch.types';
 
 export function Home() {
@@ -22,7 +23,9 @@ export function Home() {
       <aside className="header-image"></aside>
       <section className="header-container">
         <SearchBox getStockDetails={getStockDetails} />
-        <SearchResults data={searchResults} />
+      </section>
+      <section className="search-results-container">
+        <SearchResults data={SEARCH_RESULTS} />
       </section>
     </div>
   );
