@@ -62,3 +62,8 @@ export interface StockDetailAPIResponse {
   DividendDate: string;
   ExDividendDate: string;
 }
+
+export interface SearchResultsStore {
+  activeKey: string;
+  results: Record<string, StockDetailAPIResponse>;
+}

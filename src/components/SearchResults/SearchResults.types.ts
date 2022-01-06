@@ -1,6 +1,6 @@
-import {StockDetailAPIResponse} from '../../types/search/symbolSearch.types';
+import {SearchResultsStore} from '../../types/search/symbolSearch.types';
 
 export interface SearchResultsProps {
-  data: StockDetailAPIResponse[];
+  data: SearchResultsStore;
   refreshData: (key: string) => void;
 }
