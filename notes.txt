@@ -3,3 +3,5 @@
 3.) Global styles
 4.) Toast messages
 5.) API is rate limited
+6.) More test cases
+7.) Dockerised

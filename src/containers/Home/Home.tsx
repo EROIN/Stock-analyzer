@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import {Spin} from 'antd';
 
 import './Home.scss';
 
@@ -17,14 +18,22 @@ export function Home() {
   });
 
   const [activeKey, setActiveKey] = useState<string>('');
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const getStockDetails = async (symbol: string) => {
-    const stockDetails = await getStockDetailsFromSymbol(symbol);
-    const newKey = getNewKeyFromSearchResponse(stockDetails, symbol);
-    setSearchresults(prevSearchResults =>
-      getNewSearchResults(prevSearchResults, stockDetails, newKey),
-    );
-    setActiveKey(newKey);
+    try {
+      setIsLoading(true);
+      const stockDetails = await getStockDetailsFromSymbol(symbol);
+      const newKey = getNewKeyFromSearchResponse(stockDetails, symbol);
+      setSearchresults(prevSearchResults =>
+        getNewSearchResults(prevSearchResults, stockDetails, newKey),
+      );
+      setActiveKey(newKey);
+    } catch (error) {
+      // show toast
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const refreshData = (key: string) => {
@@ -38,6 +47,11 @@ export function Home() {
         <SearchBox getStockDetails={getStockDetails} />
       </section>
       <section className="search-results-container">
+        {isLoading && (
+          <div className="popup">
+            <Spin size="large" />
+          </div>
+        )}
         <SearchResults
           activeKey={activeKey}
           setActiveKey={setActiveKey}
