@@ -21,6 +21,7 @@ export const SearchBox = ({getStockDetails}: SearchBoxProps) => {
   const [dataSource, setDataSource] = useState<SymbolSearch[]>([]);
 
   const onSearch = async (input: string) => {
+    if (!input) return;
     setLoading(true);
     try {
       const response = await getSearchSymbols(input);

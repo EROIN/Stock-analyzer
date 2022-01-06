@@ -24,6 +24,8 @@ export function Home() {
           ? symbol
           : 'nodata';
       newKey = newKey.toLowerCase();
+      console.log('updating', symbol, newKey);
+
       // this is beacuse API is rate limited
       if (stockDetails.Note) stockDetails = {} as StockDetailAPIResponse;
       return {
@@ -47,7 +49,11 @@ export function Home() {
         <SearchBox getStockDetails={getStockDetails} />
       </section>
       <section className="search-results-container">
-        <SearchResults data={searchResults} refreshData={refreshData} />
+        <SearchResults
+          activeKey={searchResults.activeKey}
+          data={searchResults.results}
+          refreshData={refreshData}
+        />
       </section>
     </div>
   );

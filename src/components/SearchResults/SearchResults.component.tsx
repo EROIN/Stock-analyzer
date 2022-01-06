@@ -12,15 +12,12 @@ import {Refresher} from '../../components/Refresher/Refresher.component';
 // import {StockDetailAPIResponse} from '../../types/search/symbolSearch.types';
 
 export const SearchResults = (props: SearchResultsProps) => {
-  const {
-    data: {results, activeKey: nextKey},
-    refreshData,
-  } = props;
+  const {data: results, activeKey: nextKey, refreshData} = props;
 
   const [activeKey, setactiveKey] = useState<string>('');
 
   useEffect(() => {
-    console.log(nextKey);
+    console.log('nextKey', nextKey);
     setactiveKey(nextKey);
   }, [nextKey]);
 
