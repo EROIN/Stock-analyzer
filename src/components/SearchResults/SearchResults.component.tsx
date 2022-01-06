@@ -1,3 +1,4 @@
+import {useState} from 'react';
 import {Tabs} from 'antd';
 import {StepBackwardOutlined, StepForwardOutlined} from '@ant-design/icons';
 
@@ -7,8 +8,8 @@ import './SearchResults.scss';
 
 import {SearchResultsProps} from './SearchResults.types';
 import {SearchedTab} from '../../components/SearchedTab/SearchedTab.component';
+import {Refresher} from '../../components/Refresher/Refresher.component';
 import {StockDetailAPIResponse} from '../../types/search/symbolSearch.types';
-import {useState} from 'react';
 
 export const SearchResults = (props: SearchResultsProps) => {
   const {data} = props;
@@ -34,9 +35,16 @@ export const SearchResults = (props: SearchResultsProps) => {
 
   if (data.length == 0)
     return <div className="search-result-empty">Search Something!!</div>;
-  else if (data.length === 1) return <SearchedTab data={data[0]} />;
+  else if (data.length === 1)
+    return (
+      <>
+        <Refresher />
+        <SearchedTab data={data[0]} />
+      </>
+    );
   return (
     <div className="search-results-tabs-container">
+      <Refresher />
       <StepBackwardOutlined
         className="search-result-previous-icon"
         onClick={changeActiveKey(activeKeyIndex - 1)}
