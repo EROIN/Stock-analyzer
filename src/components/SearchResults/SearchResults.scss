@@ -5,5 +5,18 @@
 }
 
 .search-results-tabs-container {
+  flex: 1;
   position: relative;
+}
+
+.search-result-previous-icon {
+  position: absolute;
+  top: 48%;
+  left: -10%;
+  font-size: 2em;
+}
+
+.search-result-next-icon {
+  @extend .search-result-previous-icon;
+  left: 110%;
 }

@@ -1,9 +1,22 @@
-.symbol-container {
-  font-family: Roboto;
-  font-weight: 800;
+.search-tab-stock-name {
+  font-size: 2em;
+  font-weight: 700;
+
+  span {
+    font-size: 0.5em;
+  }
 }
 
-.symbol-details {
-  font-family: Roboto;
-  font-weight: 400;
+.search-tab-stock-detail-row {
+  font-weight: 600;
+
+  span {
+    font-weight: normal;
+  }
+
+  p {
+    margin-top: 1em;
+    font-family: Roboto;
+    font-weight: 300;
+  }
 }
