@@ -9,7 +9,7 @@ import {SEARCH_RESULTS} from '../../../__mocks__/searchResult.mocks';
 describe('<SearchedTab/>', () => {
   it('renders correctly with default props', () => {
     const tree = renderer
-      .create(<SearchedTab data={SEARCH_RESULTS.results.IBM} />)
+      .create(<SearchedTab data={SEARCH_RESULTS.results.ibm} />)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
