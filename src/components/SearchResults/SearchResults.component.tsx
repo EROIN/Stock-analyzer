@@ -46,8 +46,6 @@ export const SearchResults = (props: SearchResultsProps) => {
     </TabPane>
   );
 
-  console.log(activeKey);
-
   if (Object.keys(results).length === 1)
     return (
       <div className="search-results-tabs-container">

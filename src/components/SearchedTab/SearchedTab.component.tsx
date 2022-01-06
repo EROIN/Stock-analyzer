@@ -13,7 +13,8 @@ export const SearchedTab = (props: SearchedTabProps) => {
   const [chartData, setChartData] = useState<GetTimeSeriesAPIResponse>();
 
   useEffect(() => {
-    getTimeSeriesForSymbol(data.Symbol).then(setChartData);
+    if (data.Symbol && data.Symbol !== 'nodata')
+      getTimeSeriesForSymbol(data.Symbol).then(setChartData);
   }, [data.Symbol]);
 
   if (Object.keys(data).length == 0)
