@@ -1,16 +1,19 @@
 import {Input, AutoComplete} from 'antd';
-import {useState} from 'react';
+import {useMemo, useState} from 'react';
 
 import './SearchBox.scss';
 
 import {Symbol} from '../Symbol/Symbol.component';
 
 import {getSearchSymbols} from '../../middleware/search.middleware';
+
+import {SearchBoxProps} from './SearchBox.types';
 import {SymbolSearch} from '../../types/search/symbolSearch.types';
+import {throttleFunc} from '../../utils/common.utils';
 
-import {SYMBOLS} from '../../__mocks__/symbolSearch.mocks';
+// import {SYMBOLS} from '../../__mocks__/symbolSearch.mocks';
 
-export const SearchBox = () => {
+export const SearchBox = ({getStockDetails}: SearchBoxProps) => {
   const [inputValue, setInputValue] = useState<string>('');
   const [dataSource, setDataSource] = useState<SymbolSearch[]>([]);
 
@@ -19,22 +22,24 @@ export const SearchBox = () => {
     setDataSource(response.bestMatches);
   };
 
-  const renderSearchOptions = (data: SymbolSearch, index: number) => (
-    <AutoComplete.Option
-      text={`${data['2. name']} (${data['1. symbol']})`}
-      key={data['1. symbol']}
-    >
-      <Symbol data={data} />
-    </AutoComplete.Option>
+  const renderSearchOptions = (data: SymbolSearch) => ({
+    value: data['1. symbol'],
+    label: <Symbol data={data} />,
+  });
+
+  const throttleGetStockDetails = useMemo(
+    (): (() => any) => throttleFunc(onSearch, 1000),
+    [],
   );
 
   return (
     <AutoComplete
       className="auto-complete"
-      dataSource={SYMBOLS.map(renderSearchOptions)}
+      options={dataSource.map(renderSearchOptions)}
       value={inputValue}
       onChange={setInputValue}
-      onSearch={onSearch}
+      onSearch={throttleGetStockDetails}
+      onSelect={getStockDetails}
     >
       <Input.Search
         enterButton
