@@ -1,11 +1,10 @@
 import {useState} from 'react';
-import {LabelInValueType, RawValueType} from 'rc-select/lib/Select';
 
 import './Home.scss';
 
 import {SearchBox, SearchResults} from '../../components';
 import {getStockDetailsFromSymbol} from '../../middleware/search.middleware';
-import {SEARCH_RESULTS} from '../../__mocks__/searchResult.mocks';
+// import {SEARCH_RESULTS} from '../../__mocks__/searchResult.mocks';
 import {StockDetailAPIResponse} from '../../types/search/symbolSearch.types';
 
 export function Home() {
@@ -13,13 +12,13 @@ export function Home() {
     [],
   );
 
-  const getStockDetails = async (symbol: RawValueType | LabelInValueType) => {
+  const getStockDetails = async (symbol: string) => {
     const stockDetails = await getStockDetailsFromSymbol(symbol);
     setSearchresults(prevSearchResults => [...prevSearchResults, stockDetails]);
   };
 
   const refreshData = (key: string) => {
-    getStockDetails(key as RawValueType).catch(console.log);
+    getStockDetails(key).catch(console.log);
   };
 
   return (
@@ -29,7 +28,7 @@ export function Home() {
         <SearchBox getStockDetails={getStockDetails} />
       </section>
       <section className="search-results-container">
-        <SearchResults data={[SEARCH_RESULTS[0]]} refreshData={refreshData} />
+        <SearchResults data={searchResults} refreshData={refreshData} />
       </section>
     </div>
   );

@@ -4,6 +4,11 @@ import {SearchedTabProps} from './SearchedTab.types';
 
 export const SearchedTab = (props: SearchedTabProps) => {
   const {data} = props;
+  if (Object.keys(data).length == 0)
+    return (
+      <div className="search-tab-stock-name">Stock details not found.</div>
+    );
+
   return (
     <div>
       <div className="search-tab-stock-name">

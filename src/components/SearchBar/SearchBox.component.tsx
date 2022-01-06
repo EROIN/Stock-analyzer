@@ -1,4 +1,5 @@
 import {Input, AutoComplete} from 'antd';
+import {LoadingOutlined} from '@ant-design/icons';
 import {useMemo, useState} from 'react';
 
 import './SearchBox.scss';
@@ -15,11 +16,21 @@ import {debounceFunc} from '../../utils/common.utils';
 
 export const SearchBox = ({getStockDetails}: SearchBoxProps) => {
   const [inputValue, setInputValue] = useState<string>('');
+  const [isListVisible, setIsListVisible] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false);
   const [dataSource, setDataSource] = useState<SymbolSearch[]>([]);
 
   const onSearch = async (input: string) => {
-    const response = await getSearchSymbols(input);
-    setDataSource(response.bestMatches);
+    setLoading(true);
+    try {
+      const response = await getSearchSymbols(input);
+      setDataSource(response.bestMatches);
+    } catch (e) {
+      // show taost later
+    } finally {
+      setIsListVisible(true);
+      setLoading(false);
+    }
   };
 
   const renderSearchOptions = (data: SymbolSearch) => ({
@@ -32,6 +43,13 @@ export const SearchBox = ({getStockDetails}: SearchBoxProps) => {
     [],
   );
 
+  const searchStock = () => {
+    getStockDetails(inputValue);
+    setIsListVisible(false);
+  };
+
+  const openList = () => setIsListVisible(true);
+
   return (
     <AutoComplete
       className="auto-complete"
@@ -39,14 +57,21 @@ export const SearchBox = ({getStockDetails}: SearchBoxProps) => {
       value={inputValue}
       onChange={setInputValue}
       onSearch={throttleGetStockDetails}
-      onSelect={getStockDetails}
+      onSelect={searchStock}
+      open={isListVisible}
+      onFocus={openList}
     >
       <Input.Search
         enterButton
         size="large"
         placeholder="Enter Stock Code"
         className="search-input"
-        onSearch={onSearch}
+        onSearch={searchStock}
+        suffix={
+          <LoadingOutlined
+            className={loading ? 'show-loading' : 'hide-loading'}
+          />
+        }
       />
     </AutoComplete>
   );
