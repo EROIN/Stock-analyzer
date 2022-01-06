@@ -1,4 +1,4 @@
-1.) bolierplate had redux, but not being used, not being removed
+1.) bolierplate had redux etc, but not being used, not being removed
 2.) API key to be stored on BE, 
 3.) Global styles
 4.) Toast messages

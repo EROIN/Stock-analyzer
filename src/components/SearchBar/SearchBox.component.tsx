@@ -72,6 +72,7 @@ export const SearchBox = ({getStockDetails}: SearchBoxProps) => {
       onBlur={closeList}
     >
       <Input.Search
+        aria-label="search-input"
         enterButton
         size="large"
         placeholder="Enter Stock Code"
