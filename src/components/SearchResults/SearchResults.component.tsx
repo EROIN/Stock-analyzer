@@ -12,9 +12,13 @@ import {Refresher} from '../../components/Refresher/Refresher.component';
 import {StockDetailAPIResponse} from '../../types/search/symbolSearch.types';
 
 export const SearchResults = (props: SearchResultsProps) => {
-  const {data} = props;
+  const {data, refreshData} = props;
 
   const [activeKeyIndex, setActiveKeyIndex] = useState<number>(0);
+
+  const reFetchData = () => {
+    refreshData(data[activeKeyIndex]['Symbol']);
+  };
 
   const changeActiveKey = (keyIndex: number) => () => {
     if (keyIndex < 0) keyIndex = data.length - 1;
@@ -37,14 +41,14 @@ export const SearchResults = (props: SearchResultsProps) => {
     return <div className="search-result-empty">Search Something!!</div>;
   else if (data.length === 1)
     return (
-      <>
-        <Refresher />
+      <div className="search-results-tabs-container">
+        <Refresher refreshData={reFetchData} />
         <SearchedTab data={data[0]} />
-      </>
+      </div>
     );
   return (
     <div className="search-results-tabs-container">
-      <Refresher />
+      <Refresher refreshData={reFetchData} />
       <StepBackwardOutlined
         className="search-result-previous-icon"
         onClick={changeActiveKey(activeKeyIndex - 1)}

@@ -18,6 +18,10 @@ export function Home() {
     setSearchresults(prevSearchResults => [...prevSearchResults, stockDetails]);
   };
 
+  const refreshData = (key: string) => {
+    getStockDetails(key as RawValueType).catch(console.log);
+  };
+
   return (
     <div className="container">
       <aside className="header-image"></aside>
@@ -25,7 +29,7 @@ export function Home() {
         <SearchBox getStockDetails={getStockDetails} />
       </section>
       <section className="search-results-container">
-        <SearchResults data={SEARCH_RESULTS} />
+        <SearchResults data={[SEARCH_RESULTS[0]]} refreshData={refreshData} />
       </section>
     </div>
   );
