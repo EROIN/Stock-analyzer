@@ -11,6 +11,7 @@ export interface SymbolSearch {
 }
 
 export interface SymbolSearchAPIResponse {
+  Note?: string; // API is rate limited
   bestMatches: SymbolSearch[];
 }
 
@@ -65,6 +66,5 @@ export interface StockDetailAPIResponse {
 }
 
 export interface SearchResultsStore {
-  activeKey: string;
   results: Record<string, StockDetailAPIResponse>;
 }

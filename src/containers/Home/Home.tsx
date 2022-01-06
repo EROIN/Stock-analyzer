@@ -5,37 +5,26 @@ import './Home.scss';
 import {SearchBox, SearchResults} from '../../components';
 import {getStockDetailsFromSymbol} from '../../middleware/search.middleware';
 // import {SEARCH_RESULTS} from '../../__mocks__/searchResult.mocks';
+import {SearchResultsStore} from '../../types/search/symbolSearch.types';
 import {
-  SearchResultsStore,
-  StockDetailAPIResponse,
-} from '../../types/search/symbolSearch.types';
+  getNewKeyFromSearchResponse,
+  getNewSearchResults,
+} from '../../utils/search.utils';
 
 export function Home() {
   const [searchResults, setSearchresults] = useState<SearchResultsStore>({
-    activeKey: '',
     results: {},
   });
 
-  const getStockDetails = async (symbol: string) => {
-    let stockDetails = await getStockDetailsFromSymbol(symbol);
-    setSearchresults(prevSearchResults => {
-      let newKey =
-        Object.keys(stockDetails).length > 0 && stockDetails.Note == undefined
-          ? symbol
-          : 'nodata';
-      newKey = newKey.toLowerCase();
-      console.log('updating', symbol, newKey);
+  const [activeKey, setActiveKey] = useState<string>('');
 
-      // this is beacuse API is rate limited
-      if (stockDetails.Note) stockDetails = {} as StockDetailAPIResponse;
-      return {
-        activeKey: newKey,
-        results: {
-          ...prevSearchResults.results,
-          [newKey]: stockDetails,
-        },
-      };
-    });
+  const getStockDetails = async (symbol: string) => {
+    const stockDetails = await getStockDetailsFromSymbol(symbol);
+    const newKey = getNewKeyFromSearchResponse(stockDetails, symbol);
+    setSearchresults(prevSearchResults =>
+      getNewSearchResults(prevSearchResults, stockDetails, newKey),
+    );
+    setActiveKey(newKey);
   };
 
   const refreshData = (key: string) => {
@@ -50,7 +39,8 @@ export function Home() {
       </section>
       <section className="search-results-container">
         <SearchResults
-          activeKey={searchResults.activeKey}
+          activeKey={activeKey}
+          setActiveKey={setActiveKey}
           data={searchResults.results}
           refreshData={refreshData}
         />

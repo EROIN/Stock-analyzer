@@ -1,4 +1,3 @@
-import {useEffect, useState} from 'react';
 import {Tabs} from 'antd';
 import {StepBackwardOutlined, StepForwardOutlined} from '@ant-design/icons';
 
@@ -12,14 +11,9 @@ import {Refresher} from '../../components/Refresher/Refresher.component';
 // import {StockDetailAPIResponse} from '../../types/search/symbolSearch.types';
 
 export const SearchResults = (props: SearchResultsProps) => {
-  const {data: results, activeKey: nextKey, refreshData} = props;
+  const {data: results, activeKey, refreshData, setActiveKey} = props;
 
-  const [activeKey, setactiveKey] = useState<string>('');
-
-  useEffect(() => {
-    console.log('nextKey', nextKey);
-    setactiveKey(nextKey);
-  }, [nextKey]);
+  if (!results[activeKey]) return null;
 
   const reFetchData = () => {
     refreshData(results[activeKey]['Symbol']);
@@ -31,11 +25,11 @@ export const SearchResults = (props: SearchResultsProps) => {
     currentKey = currentKey + increment;
     if (currentKey < 0) currentKey = allKeys.length - 1;
     else if (currentKey >= allKeys.length) currentKey = 0;
-    setactiveKey(allKeys[currentKey]);
+    setActiveKey(allKeys[currentKey]);
   };
 
   const onChange = (newActiveKey: string) => {
-    setactiveKey(newActiveKey);
+    setActiveKey(newActiveKey);
   };
 
   const addTabs = (stockKey: string) => (
@@ -58,10 +52,10 @@ export const SearchResults = (props: SearchResultsProps) => {
   else if (Object.keys(results).length === 1)
     return (
       <div className="search-results-tabs-container">
-        {Object.keys(results[nextKey]).length > 0 && (
+        {Object.keys(results[activeKey]).length > 0 && (
           <Refresher refreshData={reFetchData} />
         )}
-        <SearchedTab data={results[nextKey]} />
+        <SearchedTab data={results[activeKey]} />
       </div>
     );
   return (

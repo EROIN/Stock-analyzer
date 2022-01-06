@@ -2,3 +2,4 @@
 2.) API key to be stored on BE, 
 3.) Global styles
 4.) Toast messages
+5.) API is rate limited

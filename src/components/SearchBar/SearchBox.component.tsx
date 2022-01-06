@@ -25,6 +25,9 @@ export const SearchBox = ({getStockDetails}: SearchBoxProps) => {
     setLoading(true);
     try {
       const response = await getSearchSymbols(input);
+      if (response.Note)
+        // API is rate limited
+        return;
       setDataSource(response.bestMatches);
     } catch (e) {
       // show taost later
