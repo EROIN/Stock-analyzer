@@ -23,15 +23,14 @@ describe('<SearchBox/>: API calls', () => {
     component = <SearchBox getStockDetails={getStockDetails} />;
   });
 
-  it('calls debounced API', () => {
+  it('should call get stock detail with the the given input if enter is pressed', async () => {
     render(component);
     const input = screen.getByLabelText('search-input');
-
-    fireEvent.click(input);
-    // @ts-ignore
-    console.log(input.value);
-    fireEvent.change(input, {target: {value: 'IBM{enter}'}});
+    const button = screen.getByLabelText('search');
+    fireEvent.change(input, {target: {value: 'IBM'}});
     fireEvent.keyPress(input, {key: 'Enter', charCode: 13});
+    fireEvent.click(button);
     expect(getStockDetails).toHaveBeenCalledTimes(1);
+    expect(getStockDetails).toHaveBeenCalledWith('IBM');
   });
 });

@@ -13,7 +13,8 @@ import {Refresher} from '../../components/Refresher/Refresher.component';
 export const SearchResults = (props: SearchResultsProps) => {
   const {data: results, activeKey, refreshData, setActiveKey} = props;
 
-  if (!results[activeKey]) return null;
+  if (!results[activeKey])
+    return <div className="search-result-empty">Search Something!!</div>;
 
   const reFetchData = () => {
     refreshData(results[activeKey]['Symbol']);
@@ -47,9 +48,7 @@ export const SearchResults = (props: SearchResultsProps) => {
 
   console.log(activeKey);
 
-  if (Object.keys(results).length == 0)
-    return <div className="search-result-empty">Search Something!!</div>;
-  else if (Object.keys(results).length === 1)
+  if (Object.keys(results).length === 1)
     return (
       <div className="search-results-tabs-container">
         {Object.keys(results[activeKey]).length > 0 && (
