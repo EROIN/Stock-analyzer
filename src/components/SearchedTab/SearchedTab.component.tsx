@@ -14,7 +14,7 @@ export const SearchedTab = (props: SearchedTabProps) => {
 
   useEffect(() => {
     if (data.Symbol && data.Symbol !== 'nodata')
-      getTimeSeriesForSymbol(data.Symbol).then(setChartData);
+      getTimeSeriesForSymbol(data.Symbol).then(setChartData).catch(console.log);
   }, [data.Symbol]);
 
   if (Object.keys(data).length == 0)

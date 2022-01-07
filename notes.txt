@@ -6,3 +6,4 @@
 6.) More test cases
 7.) Dockerised
 8.) Husky
+9.) Close Tabs
