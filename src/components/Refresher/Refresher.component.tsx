@@ -35,7 +35,7 @@ export const Refresher = ({refreshData}: RefresherProps) => {
           {refreshTime} <DownOutlined />
         </a>
       </Dropdown>
-      ,<span> seconds</span>
+      <span> seconds</span>
     </div>
   );
 };

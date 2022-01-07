@@ -5,7 +5,7 @@ import './Home.scss';
 
 import {SearchBox, SearchResults} from '../../components';
 import {getStockDetailsFromSymbol} from '../../middleware/search.middleware';
-// import {SEARCH_RESULTS} from '../../__mocks__/searchResult.mocks';
+import {SEARCH_RESULTS} from '../../__mocks__/searchResult.mocks';
 import {SearchResultsStore} from '../../types/search/symbolSearch.types';
 import {
   getNewKeyFromSearchResponse,
@@ -17,7 +17,7 @@ export function Home() {
     results: {},
   });
 
-  const [activeKey, setActiveKey] = useState<string>('');
+  const [activeKey, setActiveKey] = useState<string>('intc');
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const getStockDetails = async (symbol: string) => {
@@ -55,7 +55,7 @@ export function Home() {
         <SearchResults
           activeKey={activeKey}
           setActiveKey={setActiveKey}
-          data={searchResults.results}
+          data={SEARCH_RESULTS.results}
           refreshData={refreshData}
         />
       </section>

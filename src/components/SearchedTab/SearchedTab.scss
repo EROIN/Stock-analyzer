@@ -34,3 +34,14 @@
   height: 200px;
   align-self: center;
 }
+
+@media only screen and (max-width: 768px) {
+  .search-tab-stock-name {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+  }
+
+  .search-tab-container {
+    margin-left: 0.5em;
+  }
+}

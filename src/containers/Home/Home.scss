@@ -6,6 +6,7 @@
 }
 
 .header-image {
+  left: 0;
   width: 100%;
   position: fixed;
   height: 35vh;
@@ -38,4 +39,15 @@
   z-index: 100;
   justify-content: center;
   background-color: #8080805e;
+}
+
+@media only screen and (max-width: 768px) {
+  .header-container {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .search-results-container {
+    width: 100%;
+  }
 }

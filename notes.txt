@@ -7,3 +7,4 @@
 7.) Dockerised
 8.) Husky
 9.) Close Tabs
+10.) gh-pages
