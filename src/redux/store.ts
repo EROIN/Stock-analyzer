@@ -7,7 +7,7 @@ import thunk from 'redux-thunk';
 import counterReducer from './modules/counter/counter.module';
 import customMiddlewares from './middleware';
 
-export const history = createBrowserHistory();
+export const history = createBrowserHistory({basename: '/Stock-analyzer/'});
 
 const createRootReducer = (browserHistory: any) =>
   combineReducers({
