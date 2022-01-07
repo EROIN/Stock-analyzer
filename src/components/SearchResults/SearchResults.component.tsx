@@ -62,6 +62,7 @@ export const SearchResults = (props: SearchResultsProps) => {
         <Refresher refreshData={reFetchData} />
       )}
       <StepBackwardOutlined
+        aria-label="go-to-previous-search-tab"
         className="search-result-previous-icon"
         onClick={changeActiveKey(-1)}
       />
@@ -69,6 +70,7 @@ export const SearchResults = (props: SearchResultsProps) => {
         {Object.keys(results).map(addTabs)}
       </Tabs>
       <StepForwardOutlined
+        aria-label="go-to-next-search-tab"
         className="search-result-next-icon"
         onClick={changeActiveKey(1)}
       />

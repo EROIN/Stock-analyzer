@@ -8,11 +8,14 @@ exports[`<SearchedTab/> renders correctly with default props 1`] = `
     className="search-tab-details-wrapper"
   >
     <div
+      aria-label="stock name is International Business Machines Corporation"
       className="search-tab-stock-name"
     >
       International Business Machines Corporation
        
-      <span>
+      <span
+        aria-label="stock symbol is IBM"
+      >
         (
         IBM
         )

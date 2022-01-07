@@ -1,0 +1,628 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SearchResults/> renders correctly with multiple results 1`] = `
+<div
+  className="search-results-tabs-container"
+>
+  <div
+    className="refresher-container"
+  >
+    <span>
+      Refresh data in every 
+    </span>
+    <a
+      className="ant-dropdown-trigger"
+      onClick={[Function]}
+      onMouseDown={[Function]}
+      onTouchStart={[Function]}
+    >
+      10
+       
+      <span
+        aria-label="down"
+        className="anticon anticon-down"
+        role="img"
+      >
+        <svg
+          aria-hidden="true"
+          data-icon="down"
+          fill="currentColor"
+          focusable="false"
+          height="1em"
+          viewBox="64 64 896 896"
+          width="1em"
+        >
+          <path
+            d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+          />
+        </svg>
+      </span>
+    </a>
+    <span>
+       seconds
+    </span>
+  </div>
+  <span
+    aria-label="go-to-previous-search-tab"
+    className="anticon anticon-step-backward search-result-previous-icon"
+    onClick={[Function]}
+    role="img"
+    tabIndex={-1}
+  >
+    <svg
+      aria-hidden="true"
+      data-icon="step-backward"
+      fill="currentColor"
+      focusable="false"
+      height="1em"
+      viewBox="0 0 1024 1024"
+      width="1em"
+    >
+      <path
+        d="M347.6 528.95l383.2 301.02c14.25 11.2 35.2 1.1 35.2-16.95V210.97c0-18.05-20.95-28.14-35.2-16.94L347.6 495.05a21.53 21.53 0 000 33.9M330 864h-64a8 8 0 01-8-8V168a8 8 0 018-8h64a8 8 0 018 8v688a8 8 0 01-8 8"
+      />
+    </svg>
+  </span>
+  <div
+    className="ant-tabs ant-tabs-top ant-tabs-editable ant-tabs-card ant-tabs-editable-card"
+  >
+    <div
+      className="ant-tabs-nav"
+      onKeyDown={[Function]}
+      role="tablist"
+    >
+      <div
+        className="ant-tabs-nav-wrap"
+      >
+        <div
+          className="ant-tabs-nav-list"
+          style={
+            Object {
+              "transform": "translate(0px, 0px)",
+              "transition": undefined,
+            }
+          }
+        >
+          <div
+            className="ant-tabs-tab ant-tabs-tab-with-remove"
+            onClick={[Function]}
+          >
+            <div
+              aria-controls={null}
+              aria-selected={false}
+              className="ant-tabs-tab-btn"
+              id={null}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              role="tab"
+              tabIndex={0}
+            >
+              Intel Corporation
+            </div>
+            <button
+              aria-label="remove"
+              className="ant-tabs-tab-remove"
+              onClick={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <span
+                aria-label="close"
+                className="anticon anticon-close"
+                role="img"
+              >
+                <svg
+                  aria-hidden="true"
+                  data-icon="close"
+                  fill="currentColor"
+                  focusable="false"
+                  height="1em"
+                  viewBox="64 64 896 896"
+                  width="1em"
+                >
+                  <path
+                    d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+          <div
+            className="ant-tabs-tab ant-tabs-tab-with-remove ant-tabs-tab-active"
+            onClick={[Function]}
+            style={
+              Object {
+                "marginLeft": undefined,
+              }
+            }
+          >
+            <div
+              aria-controls={null}
+              aria-selected={true}
+              className="ant-tabs-tab-btn"
+              id={null}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              role="tab"
+              tabIndex={0}
+            >
+              International Business Machines Corporation
+            </div>
+            <button
+              aria-label="remove"
+              className="ant-tabs-tab-remove"
+              onClick={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <span
+                aria-label="close"
+                className="anticon anticon-close"
+                role="img"
+              >
+                <svg
+                  aria-hidden="true"
+                  data-icon="close"
+                  fill="currentColor"
+                  focusable="false"
+                  height="1em"
+                  viewBox="64 64 896 896"
+                  width="1em"
+                >
+                  <path
+                    d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+          <div
+            className="ant-tabs-tab ant-tabs-tab-with-remove"
+            onClick={[Function]}
+            style={
+              Object {
+                "marginLeft": undefined,
+              }
+            }
+          >
+            <div
+              aria-controls={null}
+              aria-selected={false}
+              className="ant-tabs-tab-btn"
+              id={null}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              role="tab"
+              tabIndex={0}
+            >
+              NoData
+            </div>
+            <button
+              aria-label="remove"
+              className="ant-tabs-tab-remove"
+              onClick={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <span
+                aria-label="close"
+                className="anticon anticon-close"
+                role="img"
+              >
+                <svg
+                  aria-hidden="true"
+                  data-icon="close"
+                  fill="currentColor"
+                  focusable="false"
+                  height="1em"
+                  viewBox="64 64 896 896"
+                  width="1em"
+                >
+                  <path
+                    d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+          <button
+            aria-label="Add tab"
+            className="ant-tabs-nav-add"
+            onClick={[Function]}
+            style={
+              Object {
+                "marginLeft": undefined,
+                "visibility": null,
+              }
+            }
+            type="button"
+          >
+            <span
+              aria-label="plus"
+              className="anticon anticon-plus"
+              role="img"
+            >
+              <svg
+                aria-hidden="true"
+                data-icon="plus"
+                fill="currentColor"
+                focusable="false"
+                height="1em"
+                viewBox="64 64 896 896"
+                width="1em"
+              >
+                <defs>
+                  <style />
+                </defs>
+                <path
+                  d="M482 152h60q8 0 8 8v704q0 8-8 8h-60q-8 0-8-8V160q0-8 8-8z"
+                />
+                <path
+                  d="M176 474h672q8 0 8 8v60q0 8-8 8H176q-8 0-8-8v-60q0-8 8-8z"
+                />
+              </svg>
+            </span>
+          </button>
+          <div
+            className="ant-tabs-ink-bar ant-tabs-ink-bar-animated"
+          />
+        </div>
+      </div>
+      <div
+        className="ant-tabs-nav-operations ant-tabs-nav-operations-hidden"
+      >
+        <button
+          aria-controls="null-more-popup"
+          aria-expanded={false}
+          aria-haspopup="listbox"
+          aria-hidden="true"
+          className="ant-tabs-nav-more"
+          id="null-more"
+          onKeyDown={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          style={
+            Object {
+              "marginLeft": undefined,
+              "order": 1,
+              "visibility": "hidden",
+            }
+          }
+          tabIndex={-1}
+          type="button"
+        >
+          <span
+            aria-label="ellipsis"
+            className="anticon anticon-ellipsis"
+            role="img"
+          >
+            <svg
+              aria-hidden="true"
+              data-icon="ellipsis"
+              fill="currentColor"
+              focusable="false"
+              height="1em"
+              viewBox="64 64 896 896"
+              width="1em"
+            >
+              <path
+                d="M176 511a56 56 0 10112 0 56 56 0 10-112 0zm280 0a56 56 0 10112 0 56 56 0 10-112 0zm280 0a56 56 0 10112 0 56 56 0 10-112 0z"
+              />
+            </svg>
+          </span>
+        </button>
+        <button
+          aria-label="Add tab"
+          className="ant-tabs-nav-add"
+          onClick={[Function]}
+          type="button"
+        >
+          <span
+            aria-label="plus"
+            className="anticon anticon-plus"
+            role="img"
+          >
+            <svg
+              aria-hidden="true"
+              data-icon="plus"
+              fill="currentColor"
+              focusable="false"
+              height="1em"
+              viewBox="64 64 896 896"
+              width="1em"
+            >
+              <defs>
+                <style />
+              </defs>
+              <path
+                d="M482 152h60q8 0 8 8v704q0 8-8 8h-60q-8 0-8-8V160q0-8 8-8z"
+              />
+              <path
+                d="M176 474h672q8 0 8 8v60q0 8-8 8H176q-8 0-8-8v-60q0-8 8-8z"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+    <div
+      className="ant-tabs-content-holder"
+    >
+      <div
+        className="ant-tabs-content ant-tabs-content-top"
+        style={null}
+      >
+        <div
+          aria-hidden={true}
+          aria-labelledby={null}
+          className="ant-tabs-tabpane"
+          id={null}
+          role="tabpanel"
+          style={
+            Object {
+              "display": "none",
+            }
+          }
+          tabIndex={-1}
+        />
+        <div
+          aria-hidden={false}
+          aria-labelledby={null}
+          className="ant-tabs-tabpane ant-tabs-tabpane-active"
+          id={null}
+          role="tabpanel"
+          style={Object {}}
+          tabIndex={0}
+        >
+          <div
+            className="search-tab-container"
+          >
+            <div
+              className="search-tab-details-wrapper"
+            >
+              <div
+                aria-label="stock name is International Business Machines Corporation"
+                className="search-tab-stock-name"
+              >
+                International Business Machines Corporation
+                 
+                <span
+                  aria-label="stock symbol is IBM"
+                >
+                  (
+                  IBM
+                  )
+                </span>
+              </div>
+              <div
+                className="search-tab-stock-detail-row"
+              >
+                Current Price: 
+                <span>
+                  122.96
+                </span>
+              </div>
+              <div
+                className="search-tab-stock-detail-row"
+              >
+                Exchange: 
+                <span>
+                  NYSE
+                </span>
+              </div>
+              <div
+                className="search-tab-stock-detail-row"
+              >
+                Industry: 
+                <span>
+                  COMPUTER & OFFICE EQUIPMENT
+                </span>
+              </div>
+              <div
+                className="search-tab-stock-detail-row"
+              >
+                P/E: 
+                <span>
+                  26.16
+                </span>
+              </div>
+              <div
+                className="search-tab-stock-detail-row"
+              >
+                Market Cap:
+                 
+                <span>
+                  123889353000
+                   
+                  USD
+                </span>
+              </div>
+              <div
+                className="search-tab-mobile-chart"
+              />
+              <div
+                className="search-tab-stock-detail-row"
+              >
+                <p>
+                  International Business Machines Corporation (IBM) is an American multinational technology company headquartered in Armonk, New York, with operations in over 170 countries. The company began in 1911, founded in Endicott, New York, as the Computing-Tabulating-Recording Company (CTR) and was renamed International Business Machines in 1924. IBM is incorporated in New York. IBM produces and sells computer hardware, middleware and software, and provides hosting and consulting services in areas ranging from mainframe computers to nanotechnology. IBM is also a major research organization, holding the record for most annual U.S. patents generated by a business (as of 2020) for 28 consecutive years. Inventions by IBM include the automated teller machine (ATM), the floppy disk, the hard disk drive, the magnetic stripe card, the relational database, the SQL programming language, the UPC barcode, and dynamic random-access memory (DRAM). The IBM mainframe, exemplified by the System/360, was the dominant computing platform during the 1960s and 1970s.
+                </p>
+              </div>
+            </div>
+            <div
+              className="search-tab-desktop-chart"
+            />
+          </div>
+        </div>
+        <div
+          aria-hidden={true}
+          aria-labelledby={null}
+          className="ant-tabs-tabpane"
+          id={null}
+          role="tabpanel"
+          style={
+            Object {
+              "display": "none",
+            }
+          }
+          tabIndex={-1}
+        />
+      </div>
+    </div>
+  </div>
+  <span
+    aria-label="go-to-next-search-tab"
+    className="anticon anticon-step-forward search-result-next-icon"
+    onClick={[Function]}
+    role="img"
+    tabIndex={-1}
+  >
+    <svg
+      aria-hidden="true"
+      data-icon="step-forward"
+      fill="currentColor"
+      focusable="false"
+      height="1em"
+      viewBox="0 0 1024 1024"
+      width="1em"
+    >
+      <path
+        d="M676.4 528.95L293.2 829.97c-14.25 11.2-35.2 1.1-35.2-16.95V210.97c0-18.05 20.95-28.14 35.2-16.94l383.2 301.02a21.53 21.53 0 010 33.9M694 864h64a8 8 0 008-8V168a8 8 0 00-8-8h-64a8 8 0 00-8 8v688a8 8 0 008 8"
+      />
+    </svg>
+  </span>
+</div>
+`;
+
+exports[`<SearchResults/> renders correctly with no data 1`] = `
+<div
+  className="search-result-empty"
+>
+  Search Something!!
+</div>
+`;
+
+exports[`<SearchResults/> renders correctly with one result 1`] = `
+<div
+  className="search-results-tabs-container"
+>
+  <div
+    className="refresher-container"
+  >
+    <span>
+      Refresh data in every 
+    </span>
+    <a
+      className="ant-dropdown-trigger"
+      onClick={[Function]}
+      onMouseDown={[Function]}
+      onTouchStart={[Function]}
+    >
+      10
+       
+      <span
+        aria-label="down"
+        className="anticon anticon-down"
+        role="img"
+      >
+        <svg
+          aria-hidden="true"
+          data-icon="down"
+          fill="currentColor"
+          focusable="false"
+          height="1em"
+          viewBox="64 64 896 896"
+          width="1em"
+        >
+          <path
+            d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+          />
+        </svg>
+      </span>
+    </a>
+    <span>
+       seconds
+    </span>
+  </div>
+  <div
+    className="search-tab-container"
+  >
+    <div
+      className="search-tab-details-wrapper"
+    >
+      <div
+        aria-label="stock name is International Business Machines Corporation"
+        className="search-tab-stock-name"
+      >
+        International Business Machines Corporation
+         
+        <span
+          aria-label="stock symbol is IBM"
+        >
+          (
+          IBM
+          )
+        </span>
+      </div>
+      <div
+        className="search-tab-stock-detail-row"
+      >
+        Current Price: 
+        <span>
+          122.96
+        </span>
+      </div>
+      <div
+        className="search-tab-stock-detail-row"
+      >
+        Exchange: 
+        <span>
+          NYSE
+        </span>
+      </div>
+      <div
+        className="search-tab-stock-detail-row"
+      >
+        Industry: 
+        <span>
+          COMPUTER & OFFICE EQUIPMENT
+        </span>
+      </div>
+      <div
+        className="search-tab-stock-detail-row"
+      >
+        P/E: 
+        <span>
+          26.16
+        </span>
+      </div>
+      <div
+        className="search-tab-stock-detail-row"
+      >
+        Market Cap:
+         
+        <span>
+          123889353000
+           
+          USD
+        </span>
+      </div>
+      <div
+        className="search-tab-mobile-chart"
+      />
+      <div
+        className="search-tab-stock-detail-row"
+      >
+        <p>
+          International Business Machines Corporation (IBM) is an American multinational technology company headquartered in Armonk, New York, with operations in over 170 countries. The company began in 1911, founded in Endicott, New York, as the Computing-Tabulating-Recording Company (CTR) and was renamed International Business Machines in 1924. IBM is incorporated in New York. IBM produces and sells computer hardware, middleware and software, and provides hosting and consulting services in areas ranging from mainframe computers to nanotechnology. IBM is also a major research organization, holding the record for most annual U.S. patents generated by a business (as of 2020) for 28 consecutive years. Inventions by IBM include the automated teller machine (ATM), the floppy disk, the hard disk drive, the magnetic stripe card, the relational database, the SQL programming language, the UPC barcode, and dynamic random-access memory (DRAM). The IBM mainframe, exemplified by the System/360, was the dominant computing platform during the 1960s and 1970s.
+        </p>
+      </div>
+    </div>
+    <div
+      className="search-tab-desktop-chart"
+    />
+  </div>
+</div>
+`;

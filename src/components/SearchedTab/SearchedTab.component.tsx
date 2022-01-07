@@ -26,9 +26,15 @@ export const SearchedTab = (props: SearchedTabProps) => {
   return (
     <div className="search-tab-container">
       <div className="search-tab-details-wrapper">
-        <div className="search-tab-stock-name">
+        <div
+          className="search-tab-stock-name"
+          aria-label={`stock name is ${data.Name}`}
+        >
           {data.Name}
-          &nbsp;<span>({data.Symbol})</span>
+          &nbsp;
+          <span aria-label={`stock symbol is ${data.Symbol}`}>
+            ({data.Symbol})
+          </span>
         </div>
         <div className="search-tab-stock-detail-row">
           Current Price: <span>{data['50DayMovingAverage']}</span>
