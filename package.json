@@ -46,7 +46,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --watchAll=false",
+    "test": "jest",
     "test:watch:coverage": "jest --watch --coverage",
     "test:updateSnapShot": "jest -u",
     "test:watch": "react-scripts test",
