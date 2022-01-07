@@ -50,6 +50,7 @@
     "build": "NODE_ENV=production && react-scripts build",
     "test": "jest",
     "test:watch:coverage": "jest --watch --coverage",
+    "test:coverage": "jest --coverage",
     "test:updateSnapShot": "jest -u",
     "test:watch": "react-scripts test",
     "eject": "react-scripts eject",
