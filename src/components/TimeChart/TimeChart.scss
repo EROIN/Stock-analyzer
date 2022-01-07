@@ -1,9 +1,12 @@
-.symbol-container {
-  font-family: Roboto;
-  font-weight: 800;
+.search-tab-chart-container {
+  width: 400px;
+  height: 200px;
+  align-self: center;
 }
 
-.symbol-details {
-  font-family: Roboto;
-  font-weight: 400;
+@media only screen and (max-width: 768px) {
+  .search-tab-chart-container {
+    width: 100%;
+    margin: 2em 0;
+  }
 }

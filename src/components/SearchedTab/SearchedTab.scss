@@ -29,10 +29,12 @@
   flex: 1;
 }
 
-.search-tab-chart-container {
-  width: 400px;
-  height: 200px;
-  align-self: center;
+.search-tab-mobile-chart {
+  display: none;
+}
+
+.search-tab-desktop-chart {
+  display: flex;
 }
 
 @media only screen and (max-width: 768px) {
@@ -43,5 +45,13 @@
 
   .search-tab-container {
     margin-left: 0.5em;
+  }
+
+  .search-tab-desktop-chart {
+    display: none;
+  }
+
+  .search-tab-mobile-chart {
+    display: block;
   }
 }

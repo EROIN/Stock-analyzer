@@ -24,31 +24,31 @@ export const TimeChart = (props: TimeChartProps) => {
 
   const data = getChartDataFromAPIData(chartData);
   return (
-    <ResponsiveContainer width="100%" height="100%">
-      <LineChart
-        width={500}
-        height={300}
-        data={data}
-        margin={{
-          top: 5,
-          right: 30,
-          left: 20,
-          bottom: 5,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="date" tickFormatter={getXAxisFormat} angle={-45} />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-        <Line
-          type="monotone"
-          dataKey="close"
-          stroke="#8884d8"
-          activeDot={{r: 8}}
-        />
-        <Line type="monotone" dataKey="high" stroke="#82ca9d" />
-      </LineChart>
-    </ResponsiveContainer>
+    <div className="search-tab-chart-container">
+      <ResponsiveContainer width="100%" height="100%">
+        <LineChart
+          data={data}
+          margin={{
+            top: 5,
+            right: 30,
+            left: 20,
+            bottom: 5,
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="date" tickFormatter={getXAxisFormat} angle={-45} />
+          <YAxis width={20} />
+          <Tooltip />
+          <Legend />
+          <Line
+            type="monotone"
+            dataKey="close"
+            stroke="#8884d8"
+            activeDot={{r: 8}}
+          />
+          <Line type="monotone" dataKey="high" stroke="#82ca9d" />
+        </LineChart>
+      </ResponsiveContainer>
+    </div>
   );
 };
