@@ -9,14 +9,14 @@ import {GetTimeSeriesAPIResponse} from '../../types/timeSeries/timeSeries.types'
 // import {TIME_SERIES_DATA} from '../../__mocks__/timeSeries.mocks';
 
 export const SearchedTab = (props: SearchedTabProps) => {
-  const {data} = props;
+  const {data, activeKey} = props;
 
   const [chartData, setChartData] = useState<GetTimeSeriesAPIResponse>();
 
   useEffect(() => {
-    if (data.Symbol && data.Symbol !== 'nodata')
-      getTimeSeriesForSymbol(data.Symbol).then(setChartData).catch(console.log);
-  }, [data.Symbol]);
+    if (!chartData && activeKey && activeKey !== 'nodata')
+      getTimeSeriesForSymbol(activeKey).then(setChartData).catch(console.log);
+  }, [activeKey, chartData]);
 
   if (Object.keys(data).length == 0)
     return (
@@ -62,4 +62,9 @@ export const SearchedTab = (props: SearchedTabProps) => {
       </div>
     </div>
   );
+};
+
+SearchedTab.defaultProps = {
+  activeKey: '',
+  data: {}, // added so that if someone doesnt pass by mistake, it doesnt break the page
 };

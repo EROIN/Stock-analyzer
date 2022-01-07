@@ -5,6 +5,7 @@ import {useEffect, useState} from 'react';
 import './Refresher.scss';
 
 import {RefresherProps} from './Refresher.types';
+import {noOp} from '../../utils/common.utils';
 let intervalId: any;
 
 export const Refresher = ({refreshData}: RefresherProps) => {
@@ -38,4 +39,8 @@ export const Refresher = ({refreshData}: RefresherProps) => {
       <span> seconds</span>
     </div>
   );
+};
+
+Refresher.defaultProps = {
+  refreshData: noOp,
 };

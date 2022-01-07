@@ -10,7 +10,7 @@ import {getSearchSymbols} from '../../middleware/search.middleware';
 
 import {SearchBoxProps} from './SearchBox.types';
 import {SymbolSearch} from '../../types/search/symbolSearch.types';
-import {debounceFunc} from '../../utils/common.utils';
+import {debounceFunc, noOp} from '../../utils/common.utils';
 
 // import {SYMBOLS} from '../../__mocks__/symbolSearch.mocks';
 
@@ -86,4 +86,8 @@ export const SearchBox = ({getStockDetails}: SearchBoxProps) => {
       />
     </AutoComplete>
   );
+};
+
+SearchBox.defaultProps = {
+  getStockDetails: noOp,
 };

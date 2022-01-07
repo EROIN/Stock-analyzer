@@ -12,3 +12,7 @@ export const debounceFunc = (func: (...args: any) => any, delay: number) => {
     }, delay);
   };
 };
+
+// Disabling since this function will be used a default prop
+// eslint-disable-next-line @typescript-eslint/no-empty-function
+export const noOp = () => {};

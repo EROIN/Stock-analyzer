@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Symbol/> renders correctly with default props 1`] = `
+Array [
+  <div
+    className="symbol-container"
+  >
+    IsoEnergy Ltd
+     (
+    I01.FRK
+    )
+  </div>,
+  <div
+    className="symbol-details"
+  >
+    Open: 
+    08:00
+    , Close: 
+    20:00
+  </div>,
+]
+`;
+
+exports[`<Symbol/> renders correctly with empty data 1`] = `
+Array [
+  <div
+    className="symbol-container"
+  >
+     (
+    )
+  </div>,
+  <div
+    className="symbol-details"
+  >
+    Open: 
+    , Close: 
+  </div>,
+]
+`;

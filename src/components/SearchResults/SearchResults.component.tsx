@@ -8,6 +8,7 @@ import './SearchResults.scss';
 import {SearchResultsProps} from './SearchResults.types';
 import {SearchedTab} from '../../components/SearchedTab/SearchedTab.component';
 import {Refresher} from '../../components/Refresher/Refresher.component';
+import {noOp} from '../../utils/common.utils';
 // import {StockDetailAPIResponse} from '../../types/search/symbolSearch.types';
 
 export const SearchResults = (props: SearchResultsProps) => {
@@ -42,7 +43,7 @@ export const SearchResults = (props: SearchResultsProps) => {
       }
       tab={results[stockKey]['Name'] || 'NoData'}
     >
-      <SearchedTab data={results[stockKey]} />
+      <SearchedTab data={results[stockKey]} activeKey={activeKey} />
     </TabPane>
   );
 
@@ -52,7 +53,7 @@ export const SearchResults = (props: SearchResultsProps) => {
         {Object.keys(results[activeKey]).length > 0 && (
           <Refresher refreshData={reFetchData} />
         )}
-        <SearchedTab data={results[activeKey]} />
+        <SearchedTab data={results[activeKey]} activeKey={activeKey} />
       </div>
     );
   return (
@@ -73,4 +74,14 @@ export const SearchResults = (props: SearchResultsProps) => {
       />
     </div>
   );
+};
+
+// added so that if someone doesnt pass by mistake, it doesnt break the page
+SearchResults.defaultProps = {
+  data: {
+    '': {},
+  },
+  activeKey: '',
+  setActiveKey: noOp,
+  refreshData: noOp,
 };

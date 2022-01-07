@@ -15,3 +15,8 @@ export const Symbol = (props: SymbolProps) => {
     </>
   );
 };
+
+// added so that if someone doesnt pass by mistake, it doesnt break the page
+Symbol.defaultProps = {
+  data: {},
+};

@@ -62,6 +62,9 @@ exports[`<SearchedTab/> renders correctly with default props 1`] = `
       </span>
     </div>
     <div
+      className="search-tab-mobile-chart"
+    />
+    <div
       className="search-tab-stock-detail-row"
     >
       <p>
@@ -70,7 +73,7 @@ exports[`<SearchedTab/> renders correctly with default props 1`] = `
     </div>
   </div>
   <div
-    className="search-tab-chart-container"
+    className="search-tab-desktop-chart"
   />
 </div>
 `;

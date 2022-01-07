@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TimeChart/> renders correctly with default props 1`] = `
+<div
+  className="search-tab-chart-container"
+>
+  <div
+    className="recharts-responsive-container"
+    style={
+      Object {
+        "height": "100%",
+        "maxHeight": undefined,
+        "minHeight": undefined,
+        "minWidth": undefined,
+        "width": "100%",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`<TimeChart/> renders correctly with empty data 1`] = `null`;
