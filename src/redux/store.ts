@@ -21,8 +21,8 @@ export const getStore = function configureStore(preloadedState?: any) {
     preloadedState,
     compose(
       applyMiddleware(routerMiddleware(history), thunk, ...customMiddlewares),
-      (window as any).__REDUX_DEVTOOLS_EXTENSION__ &&
-        (window as any).__REDUX_DEVTOOLS_EXTENSION__(),
+      // (window as any).__REDUX_DEVTOOLS_EXTENSION__ &&
+      //   (window as any).__REDUX_DEVTOOLS_EXTENSION__(),
     ),
   );
   return store;

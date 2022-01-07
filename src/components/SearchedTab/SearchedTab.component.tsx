@@ -6,7 +6,7 @@ import {SearchedTabProps} from './SearchedTab.types';
 import {TimeChart} from '../../components/TimeChart/TimeChart.component';
 import {getTimeSeriesForSymbol} from '../../middleware/timeSeries.middleware';
 import {GetTimeSeriesAPIResponse} from '../../types/timeSeries/timeSeries.types';
-import {TIME_SERIES_DATA} from '../../__mocks__/timeSeries.mocks';
+// import {TIME_SERIES_DATA} from '../../__mocks__/timeSeries.mocks';
 
 export const SearchedTab = (props: SearchedTabProps) => {
   const {data} = props;
@@ -51,14 +51,14 @@ export const SearchedTab = (props: SearchedTabProps) => {
           </span>
         </div>
         <div className="search-tab-mobile-chart">
-          <TimeChart chartData={TIME_SERIES_DATA} />
+          <TimeChart chartData={chartData} />
         </div>
         <div className="search-tab-stock-detail-row">
           <p>{data.Description}</p>
         </div>
       </div>
       <div className="search-tab-desktop-chart">
-        <TimeChart chartData={TIME_SERIES_DATA} />
+        <TimeChart chartData={chartData} />
       </div>
     </div>
   );
