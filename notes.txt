@@ -8,3 +8,4 @@
 8.) Husky
 9.) Close Tabs
 10.) gh-pages
+debounce, empty, regresh, api 

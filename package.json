@@ -47,7 +47,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "NODE_ENV=production && react-scripts build",
     "test": "jest",
     "test:watch:coverage": "jest --watch --coverage",
     "test:updateSnapShot": "jest -u",
